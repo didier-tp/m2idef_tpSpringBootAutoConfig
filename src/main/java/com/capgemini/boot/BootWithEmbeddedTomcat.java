@@ -7,7 +7,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 import com.capgemini.config.StandaloneWebAppConfigWithEmbbededTomcat;
 
 
-public class BootWithEmbeddedWebApp {
+public class BootWithEmbeddedTomcat {
 	// le boot complet avec webApp prise en charge par tomcat embarqué .
 	
 	
