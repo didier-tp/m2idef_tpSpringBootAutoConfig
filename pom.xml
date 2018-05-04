@@ -54,21 +54,19 @@
 		    <artifactId>slf4j-log4j12</artifactId> 
 		</dependency> 
 
+      <!-- 
 		<dependency>
 			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId> <!-- driver jdbc -->
-			<!-- version conseille par spring-boot-starter-parent -->
+			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
+		-->
+		<!-- NB: Spring boot se auto configure en fonction des librairies trouvees dans le classpath -->
 
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<!-- version conseille par spring-boot-starter-parent -->
 		</dependency>
-
-
-
-
 
 
 		<dependency>

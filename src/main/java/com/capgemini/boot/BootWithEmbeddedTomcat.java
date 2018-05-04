@@ -4,7 +4,7 @@ package com.capgemini.boot;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
-import com.capgemini.config.StandaloneWebAppConfigWithEmbbededTomcat;
+import com.capgemini.config.WithAutoConfiguration;
 
 
 public class BootWithEmbeddedTomcat {
@@ -17,7 +17,7 @@ public class BootWithEmbeddedTomcat {
 			
 		// on prépare la configuration de l'application en mode spring-boot
 		
-	     SpringApplication app = new SpringApplication(StandaloneWebAppConfigWithEmbbededTomcat.class);
+	     SpringApplication app = new SpringApplication(WithAutoConfiguration.class);
 		
 		
 		app.setWebEnvironment(true);
@@ -29,7 +29,7 @@ public class BootWithEmbeddedTomcat {
 		// on lance l'application spring
 		ConfigurableApplicationContext context =  app.run(args);
 		
-		System.out.println("localhost:8080/tpSpringBoot");
+		System.out.println("localhost:8080/tpSpringBootAutoConfig");
 		
 	}
 

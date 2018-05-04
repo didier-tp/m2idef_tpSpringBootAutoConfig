@@ -3,7 +3,7 @@ package com.capgemini.boot;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
-import com.capgemini.config.DomainAndPersistenceConfig;
+import com.capgemini.config.WithAutoConfiguration;
 import com.capgemini.service.IServiceCompte;
 
 
@@ -16,7 +16,7 @@ public class SimpleAlternativeConsoleTestBoot {
 	public static void main(String[] args) {
 		// on prépare la configuration de l'application en mode spring-boot
 		
-	     SpringApplication app = new SpringApplication(DomainAndPersistenceConfig.class);
+	     SpringApplication app = new SpringApplication(WithAutoConfiguration.class);
 	     
 		
 		

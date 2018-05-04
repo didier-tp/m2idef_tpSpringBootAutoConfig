@@ -39,7 +39,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 
 @Configuration
-@Import(DataSourceConfig.class)
+//@Import(DataSourceConfig.class)
 @EnableTransactionManagement() //"transactionManager" (not "txManager") is expected !!!
 @EnableJpaRepositories(basePackages= {"com.capgemini.dao"})
 @ComponentScan(basePackages={"com.capgemini.service"}) //to find and interpret @Autowired,  @Component , ...

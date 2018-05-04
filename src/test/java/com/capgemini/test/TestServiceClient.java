@@ -6,16 +6,15 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
-import com.capgemini.config.DomainAndPersistenceConfig;
+import com.capgemini.config.WithAutoConfiguration;
 import com.capgemini.entity.Client;
 import com.capgemini.service.IServiceClient;
 
-@RunWith(SpringJUnit4ClassRunner.class) //avec spring-test dans pom.xml
-//@ContextConfiguration("/springConfig.xml") //charge une seule fois => test performant
-@ContextConfiguration(classes = { DomainAndPersistenceConfig.class})
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes= {WithAutoConfiguration.class})
 public class TestServiceClient {
 	
 	@Autowired
