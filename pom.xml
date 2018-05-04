@@ -2,9 +2,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.capgemini</groupId>
-	<artifactId>tpSpringBoot</artifactId>
+	<artifactId>tpSpringBootAutoConfig</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -16,7 +16,6 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<failOnMissingWebXml>false</failOnMissingWebXml>
 	</properties>
 
 	<dependencies>
@@ -24,7 +23,6 @@
        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-tomcat</artifactId>
-            <scope>provided</scope> <!-- selon mode de démarrage (.war) ou spring-boot -->
         </dependency>	
         
          <dependency>
@@ -132,7 +130,7 @@
 
 	</dependencies>
 	<build>
-		<finalName>${project.artifactId}</finalName> <!-- tpSpringBoot.war ou .jar -->
+		<finalName>${project.artifactId}</finalName> <!-- tpSpringBootAutoConfig.war ou .jar -->
 	</build>
 
 
