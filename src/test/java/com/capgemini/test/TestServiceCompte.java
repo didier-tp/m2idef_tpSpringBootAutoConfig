@@ -7,6 +7,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.capgemini.config.WithAutoConfiguration;
@@ -14,7 +15,7 @@ import com.capgemini.entity.Compte;
 import com.capgemini.service.IServiceCompte;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes= {WithAutoConfiguration.class})
+@SpringBootTest(classes= {WithAutoConfiguration.class} )
 public class TestServiceCompte {
 	
 	@Autowired

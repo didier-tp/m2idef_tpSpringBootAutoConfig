@@ -32,7 +32,7 @@ public class Compte {
 		
 		@JsonIgnore
 		@ManyToOne  //un ou plusieurs comptes pour un client
-		@JoinColumn(name="refClient")//nom de la colonne clef étrangère (fk)
+		@JoinColumn(name="ref_Client")//nom de la colonne clef étrangère (fk)
 		private Client client; //avec get/set
 		
 		public Compte() {

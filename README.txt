@@ -13,3 +13,8 @@ mais à la place on a:
 
 * @AutoConfiguration
 
+
+====================
+
+NB: ca ne fonctionne pas encore parfaitement ---- pas termnié !!!!
+
