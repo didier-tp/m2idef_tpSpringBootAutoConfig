@@ -1,5 +1,7 @@
 package com.capgemini.config;
 
+import java.util.Properties;
+
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
@@ -11,7 +13,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
-import org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor;
 import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
@@ -49,7 +50,7 @@ public class DomainAndPersistenceConfig {
 	public JpaVendorAdapter jpaVendorAdapter() {
 		HibernateJpaVendorAdapter hibernateJpaVendorAdapter = new HibernateJpaVendorAdapter();
 		hibernateJpaVendorAdapter.setShowSql(false);
-		hibernateJpaVendorAdapter.setGenerateDdl(false);
+		hibernateJpaVendorAdapter.setGenerateDdl(true);
 		//hibernateJpaVendorAdapter.setDatabase(Database.MYSQL);
 		hibernateJpaVendorAdapter.setDatabase(Database.H2);
 		return hibernateJpaVendorAdapter;
@@ -62,16 +63,15 @@ public class DomainAndPersistenceConfig {
 		LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
 		factory.setJpaVendorAdapter(jpaVendorAdapter);
 		factory.setPackagesToScan("com.capgemini.entity");
+		Properties jpaProperties = new Properties();
+		jpaProperties.put("hibernate.hbm2ddl.auto", "create");
+		jpaProperties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
+		factory.setJpaProperties(jpaProperties);
 		factory.setDataSource(dataSource);
 		factory.afterPropertiesSet();
 		return factory.getObject();
 	}
 	
-	// pour activer la prise en charge de @PersistentContext dans le code 
-	@Bean
-	public PersistenceAnnotationBeanPostProcessor enablePersistentContextAnnotation(){
-		return new PersistenceAnnotationBeanPostProcessor();
-	}
 
 	// Transaction Manager for JPA or ...
 	@Bean(name="transactionManager")//("transactionManager" but not "txManager")

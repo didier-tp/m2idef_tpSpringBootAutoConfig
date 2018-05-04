@@ -10,12 +10,13 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.capgemini.config.DomainAndPersistenceConfig;
 import com.capgemini.entity.Compte;
 import com.capgemini.service.IServiceCompte;
 
 @RunWith(SpringJUnit4ClassRunner.class) //avec spring-test dans pom.xml
-@ContextConfiguration("/springConfig.xml") //charger une seule fois => test performant
-//@ActiveProfiles("mysql")
+//@ContextConfiguration("/springConfig.xml") //charge une seule fois => test performant
+@ContextConfiguration(classes = { DomainAndPersistenceConfig.class})
 public class TestServiceCompte {
 	
 	@Autowired

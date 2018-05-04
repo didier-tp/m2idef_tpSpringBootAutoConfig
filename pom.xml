@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.capgemini</groupId>
-	<artifactId>tpSpringWs</artifactId>
+	<artifactId>tpSpringBoot</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
@@ -16,19 +16,29 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<myfaces.version>2.1.5</myfaces.version>
 		<failOnMissingWebXml>false</failOnMissingWebXml>
 	</properties>
 
 	<dependencies>
 
-
-		<dependency>
-			<groupId>commons-logging</groupId>
-			<artifactId>commons-logging</artifactId>
-			<version>1.2</version>
+       <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope> <!-- selon mode de démarrage (.war) ou spring-boot -->
+        </dependency>	
+        
+         <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>			
+			<scope>test</scope>
+		</dependency> 
+       
+		
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
@@ -41,8 +51,10 @@
 			<!-- version conseille par spring-boot-starter-parent -->
 		</dependency>
 
-		<!-- <dependency> <groupId>org.slf4j</groupId> <artifactId>slf4j-log4j12</artifactId> 
-			</dependency> -->
+		<dependency> 
+		    <groupId>org.slf4j</groupId> 
+		    <artifactId>slf4j-log4j12</artifactId> 
+		</dependency> 
 
 		<dependency>
 			<groupId>mysql</groupId>
@@ -110,46 +122,17 @@
 			<!-- version conseille par spring-boot-starter-parent -->
 		</dependency>
 
-
+         
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
-			<!-- version conseille par spring-boot-starter-parent -->
-			<scope>provided</scope> <!-- deja fourni par tomcat -->
-		</dependency>
-
-
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
-			<!-- version conseille par spring-boot-starter-parent -->
-			<scope>compile</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.myfaces.core</groupId>
-			<artifactId>myfaces-api</artifactId>
-			<version>${myfaces.version}</version>
-			<!-- scope=compile par defaut , sera placé dans WEB-INF/lib et deployé 
-				dans tomcat avec l'application -->
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.myfaces.core</groupId>
-			<artifactId>myfaces-impl</artifactId>
-			<version>${myfaces.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.primefaces</groupId>
-			<artifactId>primefaces</artifactId>
-			<version>6.2</version>
+			<scope>provided</scope> 
 		</dependency>
 
 
 	</dependencies>
 	<build>
-		<finalName>${project.artifactId}</finalName> <!-- tpSpring.war -->
+		<finalName>${project.artifactId}</finalName> <!-- tpSpringBoot.war ou .jar -->
 	</build>
 
 
