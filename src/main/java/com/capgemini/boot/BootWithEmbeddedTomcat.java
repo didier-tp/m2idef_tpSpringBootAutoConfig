@@ -29,7 +29,7 @@ public class BootWithEmbeddedTomcat {
 		// on lance l'application spring
 		ConfigurableApplicationContext context =  app.run(args);
 		
-		System.out.println("localhost:8080/tpSpringBootAutoConfig");
+		System.out.println("localhost:8080_ou_8888/tpSpringBootAutoConfig");
 		
 	}
 

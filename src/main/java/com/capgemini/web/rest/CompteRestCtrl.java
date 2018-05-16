@@ -16,7 +16,7 @@ import com.capgemini.service.IServiceCompte;
 import com.capgemini.web.rest.data.OrdreVirement;
 
 @RestController
-@RequestMapping(value="/rest/compte" , 
+@RequestMapping(value="/mvc/rest/compte" , 
                 headers="Accept=application/json")
 public class CompteRestCtrl {
 	
