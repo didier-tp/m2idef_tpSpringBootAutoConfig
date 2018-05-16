@@ -16,5 +16,5 @@ mais à la place on a:
 
 ====================
 
-NB: ca ne fonctionne pas encore parfaitement ---- pas termnié !!!!
+NB: ca ne fonctionne pas encore parfaitement ---- pas terminé !!!!
 
